@@ -35,6 +35,10 @@
     "import/prefer-default-export": "off",
     "react/prop-types": "off",
     "prettier/prettier": "error",
+    "react/self-closing-comp": ["error", {
+      "component": true,
+      "html": true
+    }],
     "import-helpers/order-imports": [
       "error",
       {

@@ -1,0 +1,22 @@
+[
+  {
+    "id": "1",
+    "name": "Camiseta",
+    "price": 12.99
+  },
+  {
+    "id": "2",
+    "name": "Bermuda",
+    "price": 9.99
+  },
+  {
+    "id": "3",
+    "name": "Meia",
+    "price": 4.99
+  },
+  {
+    "id": "4",
+    "name": "Saia",
+    "price": 12.99
+  }
+]

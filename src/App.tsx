@@ -1,5 +1,16 @@
 import React from 'react'
 
-const App: React.FC = () => <h1>Hello World</h1>
+import Cart from '~/components/Cart'
+import Product from '~/components/Product'
+import products from '~/samples/products.json'
+
+const App: React.FC = () => (
+  <>
+    <Cart />
+    {products.map((product) => (
+      <Product key={product.id} product={product} />
+    ))}
+  </>
+)
 
 export default App
