@@ -1,21 +1,27 @@
-import { combineReducers, createStore, Store } from 'redux'
+import Reactotron from '~/ReactotronConfig'
+
+import { createStore, Store } from 'redux'
 import { persistStore, persistReducer } from 'redux-persist'
 import storage from 'redux-persist/lib/storage'
 
-import { cartReducer } from './cart/reducers'
+import rootReducer, { RootState } from './rootReducer'
 
-const rootReducer = combineReducers({
-  cart: cartReducer,
-})
-
-export type RootState = ReturnType<typeof rootReducer>
-
+// Config for redux persist.
 const persistConfig = {
   key: 'root',
   storage,
 }
 
+// Create the persister reducer with root reducer.
 const persistedReducer = persistReducer(persistConfig, rootReducer)
 
-export const store: Store = createStore(persistedReducer)
+// Create the store with Reactotron.
+const store: Store<RootState> = Reactotron.createEnhancer
+  ? createStore(persistedReducer, Reactotron.createEnhancer())
+  : createStore(persistedReducer)
+
+// Export persistor.
 export const persistor = persistStore(store)
+
+// Export store.
+export default store

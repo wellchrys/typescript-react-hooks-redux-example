@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import IProduct from '~/interfaces/api/Product'
 import { addItem, removeItem } from '~/store/cart/actions'
 import { CartState } from '~/store/cart/types'
-import { RootState } from '~/store/index'
+import { RootState } from '~/store/rootReducer'
 
 interface ProductProps {
   product: IProduct

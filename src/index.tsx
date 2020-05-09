@@ -1,7 +1,8 @@
 import React from 'react'
+import './ReactotronConfig'
 import { Provider } from 'react-redux'
 
-import { store, persistor } from '~/store'
+import store, { persistor } from '~/store'
 
 import ReactDOM from 'react-dom'
 import { PersistGate } from 'redux-persist/integration/react'
